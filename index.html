@@ -1,12 +1,56 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
+||||||| merged common ancestors
+<!DOCTYPE html>
+<html lang="en">
+=======
+<!doctype html>
+<html lang="en">
+>>>>>>> Assignment 2, initial commit
   <head>
+<<<<<<< HEAD
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Assignment Solution for Module 2</title>
+||||||| merged common ancestors
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .message {
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+    </style>
+=======
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+>>>>>>> Assignment 2, initial commit
   </head>
+<<<<<<< HEAD
 
   <body>
     <h1>Our Menu</h1>
@@ -60,4 +104,62 @@
     </article>
     <!-- <p style="background-color: blue; margin: 0;">AZE</p> -->
   </body>
+||||||| merged common ancestors
+  <body ng-app="LunchCheck">
+    <div class="container" ng-controller="LunchCheckController">
+      <h1>Lunch Checker</h1>
+      <div class="alert alert-info" role="alert">
+        Bonus are implemented, especially empty entries are not counted. Only unique entries are taken in account.
+      </div>
+      <div class="form-group">
+        <input
+          id="lunch-menu"
+          type="text"
+          placeholder="list comma separated dishes you usually have for lunch"
+          class="form-control"
+          ng-model="lunchCheckElts"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" ng-click="lunchChecker()">
+          Check If Too Much
+        </button>
+      </div>
+      <div class="form-group message">
+        <span ng-style="LunchCheckMessage.style">{{
+          LunchCheckMessage.text
+        }}</span>
+      </div>
+    </div>
+  </body>
+=======
+<body>
+  <div class="container">
+  <h1>Shopping List Check Off</h1>
+
+  <div class="row">
+
+    <!-- To Buy List -->
+    <div class="col-md-6">
+     <h2>To Buy:</h2>
+     <ul>
+       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+     </ul>
+     <div class="emptyMessage">Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6">
+     <h2>Already Bought:</h2>
+     <ul>
+       <li>Bought 10 cookies</li>
+     </ul>
+     <div class="emptyMessage">Nothing bought yet.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+>>>>>>> Assignment 2, initial commit
 </html>
