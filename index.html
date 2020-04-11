@@ -1,36 +1,12 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-
-<html>
-||||||| merged common ancestors
 <!DOCTYPE html>
 <html lang="en">
-=======
-<!doctype html>
-<html lang="en">
->>>>>>> Assignment 2, initial commit
   <head>
-<<<<<<< HEAD
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Assignment Solution for Module 2</title>
-||||||| merged common ancestors
-    <title>Lunch Checker</title>
+    <title>Shopping List Check Off</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style>
-      .message {
-        font-size: 1.3em;
-        font-weight: bold;
-      }
-    </style>
-=======
-    <title>Shopping List Check Off</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .emptyMessage {
         font-weight: bold;
@@ -48,118 +24,37 @@
         color: green;
       }
     </style>
->>>>>>> Assignment 2, initial commit
   </head>
-<<<<<<< HEAD
+  <body ng-app="ShoppingListApp">
+    <div class="container">
+      <h1>Shopping List Check Off</h1>
 
-  <body>
-    <h1>Our Menu</h1>
-    <!-- <p style="background-color: red; margin: 0;">QSD</p> -->
-    <article class="row">
-      <section class="col col-lg-4 col-md-6">
-        <h1 class="chicken">Chicken</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </section>
+      <div class="row">
+        <!-- To Buy List -->
+        <div class="col-md-6" ng-controller="ToBuyController as ToBuy">
+          <h2>To Buy:</h2>
+          <ul>
+            <li ng-repeat="item in ToBuy.items">
+              Buy {{ item.quantity }} {{ item.name }}
+              <button class="btn btn-default" ng-click="ToBuy.buy(item)">
+                <span class="glyphicon glyphicon-ok"></span> Bought
+              </button>
+            </li>
+          </ul>
+          <div class="emptyMessage" ng-if="ToBuy.items.length == 0">Everything is bought!</div>
+        </div>
 
-      <section class="col col-lg-4 col-md-6">
-        <h1 class="beef">Beef</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </section>
-
-      <section class="col col-lg-4 col-md-12">
-        <h1 class="sushi">Sushi</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. <span class="wideblock">Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Curabitur
-          pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius,
-          turpis et commodo pharetra, est eros bibendum elit, nec luctus magna
-          felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.
-          Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a
-          elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
-          euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum
-          consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis
-          sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam
-          faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed
-          malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam
-          arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet
-          et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu,
-          feugiat in, orci. In hac habitasse platea dictumst.</span>
-        </p>
-      </section>
-    </article>
-    <!-- <p style="background-color: blue; margin: 0;">AZE</p> -->
-  </body>
-||||||| merged common ancestors
-  <body ng-app="LunchCheck">
-    <div class="container" ng-controller="LunchCheckController">
-      <h1>Lunch Checker</h1>
-      <div class="alert alert-info" role="alert">
-        Bonus are implemented, especially empty entries are not counted. Only unique entries are taken in account.
-      </div>
-      <div class="form-group">
-        <input
-          id="lunch-menu"
-          type="text"
-          placeholder="list comma separated dishes you usually have for lunch"
-          class="form-control"
-          ng-model="lunchCheckElts"
-        />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-default" ng-click="lunchChecker()">
-          Check If Too Much
-        </button>
-      </div>
-      <div class="form-group message">
-        <span ng-style="LunchCheckMessage.style">{{
-          LunchCheckMessage.text
-        }}</span>
+        <!-- Already Bought List -->
+        <div class="col-md-6" ng-controller="AlreadyBoughtController as Bought">
+          <h2>Already Bought:</h2>
+          <ul>
+            <li ng-repeat="item in Bought.items">
+              Bought {{ item.quantity }} {{ item.name }}
+            </li>
+          </ul>
+          <div class="emptyMessage" ng-if="Bought.items.length == 0">Nothing bought yet.</div>
+        </div>
       </div>
     </div>
   </body>
-=======
-<body>
-  <div class="container">
-  <h1>Shopping List Check Off</h1>
-
-  <div class="row">
-
-    <!-- To Buy List -->
-    <div class="col-md-6">
-     <h2>To Buy:</h2>
-     <ul>
-       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-     </ul>
-     <div class="emptyMessage">Everything is bought!</div>
-    </div>
-
-    <!-- Already Bought List -->
-    <div class="col-md-6">
-     <h2>Already Bought:</h2>
-     <ul>
-       <li>Bought 10 cookies</li>
-     </ul>
-     <div class="emptyMessage">Nothing bought yet.</div>
-    </div>
-  </div>
-</div>
-
-</body>
->>>>>>> Assignment 2, initial commit
 </html>
