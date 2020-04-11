@@ -27,11 +27,11 @@
   function ShoppingListCheckOffService() {
 
     var ToBuyItemsList = [
-      { name: "cookie", quantity: 10 },
-      { name: "brownie", quantity: 5 },
-      { name: "marshmallow", quantity: 400 },
-      { name: "pie", quantity: 5 },
-      { name: "egg", quantity: 20 },
+      { name: "cookies", quantity: 10 },
+      { name: "brownies", quantity: 5 },
+      { name: "marshmallows", quantity: 400 },
+      { name: "pies", quantity: 5 },
+      { name: "eggs", quantity: 20 },
     ];
 
     var BoughtItemsList = [];
