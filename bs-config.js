@@ -27,7 +27,7 @@ module.exports = {
   proxy: false,
   port: 3000,
   middleware: false,
-  serveStatic: [],
+  serveStatic: ['.'],
   ghostMode: {
     clicks: true,
     scroll: true,
