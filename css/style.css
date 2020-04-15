@@ -70,13 +70,13 @@ p {
   margin-right: calc(-1 * var(--padding-col));
 
   border: 0;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .col {
   float: left;
-  border: 2px solid black;
+  border: 1px solid black;
   padding: var(--padding-col);
   margin: var(--margin-col);
   height: 200px;
