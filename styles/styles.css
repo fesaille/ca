@@ -9,6 +9,17 @@ input[type="text"] {
   float: left;
   margin-left: 10px;
 }
+
+form {
+  margin-bottom: 2em;
+}
+
+form:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .loader {
   display: none;
   margin-left: 5px;
