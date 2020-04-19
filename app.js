@@ -56,7 +56,7 @@
         .then(
           (response) =>
             response.data.menu_items.filter((elt) =>
-              elt.description.includes(searchTerm)
+              elt.description.toLowerCase().includes(searchTerm.toLowerCase())
             ),
           (response) => console.log("Oops")
         );
