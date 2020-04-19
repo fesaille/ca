@@ -20,7 +20,7 @@
     var $ctrl = this;
 
     $ctrl.remove = function (eltIdx) {
-      console.log(eltIdx);
+      // console.log(eltIdx);
       $ctrl.onRemove({ index: eltIdx });
     };
   }
