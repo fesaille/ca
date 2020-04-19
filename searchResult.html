@@ -5,5 +5,4 @@
     <button ng-click="$ctrl.remove($index);">Don't want this one!</button>
   </li>
 </ol>
-<!-- <div class="error">WARNING! WARNING! COOKIES DETECTED!</div> -->
-
+<div ng-if="$ctrl.items.length == 0">Nothing found</div> 

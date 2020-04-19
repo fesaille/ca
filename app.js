@@ -31,7 +31,7 @@
 
     menu.getItems = function () {
       MenuSearchService.getMatchedMenuItems(this.searchTerm).then(
-        (res) => (menu.found = res)
+        (res) => (menu.found = this.searchTerm != ""?res:[])
       );
     };
 
