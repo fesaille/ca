@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Narrow Down Your Menu Choice</title>
+    <title>Welcome to our restaurant</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <body ng-app="NarrowItDownApp">
-    <div class="container" ng-controller="NarrowItDownController as ctl">
-      <h1>Narrow Down Your Chinese Menu Choice</h1>
+  <body ng-app="MenuApp">
+    <div class="container">
+      <h1>Welcome to our restaurant</h1>
 
-      <form>
-        <div class="form-group">
-          <input type="text" placeholder="search term" ng-model="ctl.searchTerm" class="form-control" />
-        </div>
-        <div class="group narrow-button">
-          <button ng-click="ctl.getItems()" class="btn btn-primary">Narrow It Down For Me!</button>
-        </div>
-      </form>
+      <ui-view></ui-view>
 
-      <!-- found-items should be implemented as a component -->
+
+      <!-- Test menuDataService -->
+      <!-- <div ng-controller="MenuAppController as ctl"> -->
+      <!--   <ol> -->
+      <!--     <li ng-repeat="item in ctl.items"> -->
+      <!--       {{ item.name }} -->
+      <!--     </li> -->
+      <!--   </ol> -->
+      <!-- </div> -->
+
+      <!-- <!-1- found-items should be implemented as a component -1-> -->
       <!-- <found-items found-items="...." on-remove="...."></found-items> -->
       <!-- <ol> -->
       <!--   <li ng-repeat="item in ctl.items"> -->
@@ -29,10 +30,32 @@
       <!--   </li> -->
       <!-- </ol> -->
 
-      <search-result items="ctl.found" on-remove="ctl.removeItem(index)"></search-result>
-      <!-- <div> --> 
+      <!-- <div> -->
       <!--   <ul><li ng-repeat="elt in ctl.found.menu_items">{{elt}}</li></ul> -->
       <!-- </div> -->
     </div>
+    <script src="lib/angular.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/data.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- Create menudata.service.js file and create a service called
+      MenuDataService in it. This service should be declared on the data
+      module, not on the MenuApp module. The MenuDataService should have 2
+    methods: -->
+
+    <script src="src/menuapp.controller.js"></script>
+    <script src="src/menudata.service.js"></script>
+    <script src="src/menudata.constant.js"></script>
+
+    <!-- components -->  
+    <script src="src/categories.component.js"></script>
+    
+    <script src="src/items.controller.js"></script>
+    <script src="src/items.component.js"></script>
   </body>
 </html>

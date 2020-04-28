@@ -1,8 +1,0 @@
-<h3>Search results</h3>
-<ol>
-  <li ng-repeat="elt in $ctrl.items  | filter:searchText">
-    Name: {{ elt.name}}<br/>Short Name: {{ elt.short_name }}<br/>Description: {{ elt.description }}<br/>
-    <button ng-click="$ctrl.remove($index);">Don't want this one!</button>
-  </li>
-</ol>
-<div ng-if="$ctrl.items.length == 0">Nothing found</div> 
