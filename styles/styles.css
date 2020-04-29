@@ -1,7 +1,0 @@
-.breadcrumb li:not(.active) {
-  font-weight: bold;
-  cursor: pointer;
-}
-.breadcrumb li:not(.active):hover {
-  color: rgb(51, 122, 183);
-}
