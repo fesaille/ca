@@ -18,3 +18,11 @@
 .ui-view-placeholder {
     margin-top: 60px;
 }
+
+input {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 2rem;
+}

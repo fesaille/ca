@@ -1,0 +1,78 @@
+<div class="container">
+  <h2 id="sign-up" class="text-center">Sign Up informations</h2>
+  <div class="text-center" ng-if="!myInfoCtrl.completed">
+    Sign up <a href="#/signup">here</a>
+  </div>
+
+  
+  <div ng-if="myInfoCtrl.completed">
+    <form name="signUpForm" novalidate>
+      <div class="form-row mb-3">
+        <div class="col-md-6 mb-3">
+          <label for="firstname">First Name</label>
+
+          <input
+            type="text"
+            name="firstname"
+            class="form-control"
+            placeholder="{{ myInfoCtrl.user.firstname }}"
+            disabled
+            />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastname">Last Name</label>
+          <input
+            type="text"
+            name="lastname"
+            class="form-control"
+            placeholder="{{ myInfoCtrl.user.lastname }}"
+            disabled
+            />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            aria-describedby="emailHelp"
+            placeholder="{{ myInfoCtrl.user.email }}"
+            disabled
+            />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="phone">Phone number</label>
+          <input
+            class="form-control"
+            name="phone"
+            placeholder="{{ myInfoCtrl.user.phone }}"
+            disabled
+            type="tel"
+            />
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-12">
+            <label for="favMenuNumber">Favorite dish</label>
+            <input
+              type="text"
+              name="favMenuNumber"
+              class="form-control"
+              placeholder="{{ myInfoCtrl.user.favMenuNumber }}"
+              disabled
+              />
+          </div>
+        </div>
+        <img src="https://powerful-wildwood-52431.herokuapp.com/images/{{ myInfoCtrl.user.favMenuNumber }}.jpg" alt="FavoriteDish" />
+      </div>
+    </form>
+  </div>
+  <!-- <menu-category ng-repeat="menuCategory in menuCtrl.menuCategories" -->
+  <!--                category="menuCategory"> -->
+  <!-- </menu-category> -->
+</div>
